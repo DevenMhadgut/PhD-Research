@@ -1,0 +1,101 @@
+clc; clear; close all;
+addpath(genpath('C:\Users\deven\OneDrive\Desktop\Geometry Sensitivity Paper'))
+addpath(genpath('C:\Users\deven\OneDrive\Desktop\Laser_VF'))
+
+%%
+
+[freqp,ForcePC_amp0_05_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_1_0.05V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_06_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_2_0.06V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_07_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_3_0.07V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_08_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_4_0.08V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_09_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_5_0.09V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_1_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_6_0.1V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_2_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_7_0.2V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_3_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_8_0.3V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_4_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_9_0.4V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_5_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_10_0.5V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_6_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_11_0.6V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_7_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_12_0.7V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_8_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_13_0.8V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_9_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_14_0.9V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp1_0_noampcorr]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_15_1.0V.svd','FFT','Ref1','Force','Real & Imag.',3,0);
+
+[freqp,ForcePC_amp0_05_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_1_0.05V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_06_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_2_0.06V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_07_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_3_0.07V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_08_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_4_0.08V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_09_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_5_0.09V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_1_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_6_0.1V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_2_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_7_0.2V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_3_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_8_0.3V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_4_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_9_0.4V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_5_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_10_0.5V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_6_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_11_0.6V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_7_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_12_0.7V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_8_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_13_0.8V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp0_9_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_14_0.9V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+[freqp,ForcePC_amp1_0_noampcorrR2]=GetPointData('InvLoadEstimation_Test_Results/Uncorrected/scan_15_1.0V.svd','FFT','Ref2','Force','Real & Imag.',3,0);
+
+%%
+% Generate Amp Corr Files
+ForcePC_no_ampcorr = [ForcePC_amp0_05_noampcorr; ForcePC_amp0_06_noampcorr;ForcePC_amp0_07_noampcorr;ForcePC_amp0_08_noampcorr;ForcePC_amp0_09_noampcorr;ForcePC_amp0_1_noampcorr;ForcePC_amp0_2_noampcorr;ForcePC_amp0_3_noampcorr;ForcePC_amp0_4_noampcorr;ForcePC_amp0_5_noampcorr;ForcePC_amp0_6_noampcorr;ForcePC_amp0_7_noampcorr;ForcePC_amp0_8_noampcorr;ForcePC_amp0_9_noampcorr;ForcePC_amp1_0_noampcorr];
+%ForcePC_no_ampcorr = [ForcePC_amp0_7_noampcorr;ForcePC_amp0_8_noampcorr;ForcePC_amp0_9_noampcorr;ForcePC_amp1_0_noampcorr];
+
+ForcePC_no_ampcorrR2 = [ForcePC_amp0_05_noampcorrR2; ForcePC_amp0_06_noampcorrR2;ForcePC_amp0_07_noampcorrR2;ForcePC_amp0_08_noampcorrR2;ForcePC_amp0_09_noampcorrR2;ForcePC_amp0_1_noampcorrR2;ForcePC_amp0_2_noampcorrR2;ForcePC_amp0_3_noampcorrR2;ForcePC_amp0_4_noampcorrR2;ForcePC_amp0_5_noampcorrR2;ForcePC_amp0_6_noampcorrR2;ForcePC_amp0_7_noampcorrR2;ForcePC_amp0_8_noampcorrR2;ForcePC_amp0_9_noampcorrR2;ForcePC_amp1_0_noampcorrR2];
+%ForcePC_no_ampcorrR2 = [ForcePC_amp0_7_noampcorrR2;ForcePC_amp0_8_noampcorrR2;ForcePC_amp0_9_noampcorrR2;ForcePC_amp1_0_noampcorrR2];
+
+amp_levels=[0.05 0.06 0.07 0.08 0.09 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0];
+%amp_levels=[0.7 0.8 0.9 1.0];
+for k=1:length(amp_levels)
+
+    F_flat=amp_levels(k)*ones(1,length(ForcePC_amp0_7_noampcorr(384:end)));
+
+    F_to_apply=(ForcePC_no_ampcorrR2(k,384:end).*F_flat)./ForcePC_no_ampcorr(k,384:end);
+    F_to_apply_normalized(k,:)=abs(F_to_apply)./mean(abs(F_to_apply));
+    F_to_apply_normalized_final=[freqp(384:end)' F_to_apply_normalized(k,:)'];
+    F_to_apply_normalized_final_smooth=[freqp(384:end)' (smoothdata(F_to_apply_normalized(k,:),"gaussian",50))'];
+    save(['InvLoadEstimation_Test_Results/Corrected/Single Correction Files/SingleAmpCorrection',num2str(k),'.txt'],'F_to_apply_normalized_final_smooth','-ascii');
+
+end
+%%
+for k=1:length(amp_levels)
+
+    system(['copy /b preamble.txt+SingleAmpCorrection',num2str(k),'.txt Correction_',num2str(k),'.txt']);
+
+end
+
+
+
+save("amp_correction_1.mat","")
+%%
+figure(1)
+plot(freqp,abs(Forcess36amp0_1_noampcorr),freqp,abs(Forcess36amp0_1_Flat),freqp,abs(Forcess36amp0_1_Ref2))
+legend("No Amplitude Correction","Amp Correction to get Flat Signal","Amp Correction to get Ref2 Signal")
+xlabel("Frequency (Hz)")
+ylabel("Force (N)")
+title("Force Amplitude for the 0.1 V Signal")
+grid on
+
+figure(2)
+plot(freqp,abs(Forcess36amp0_5_noampcorr),freqp,abs(Forcess36amp0_5_Flat),freqp,abs(Forcess36amp0_5_Ref2))
+legend("No Amplitude Correction","Amp Correction to get Flat Signal","Amp Correction to get Ref2 Signal")
+xlabel("Frequency (Hz)")
+ylabel("Force (N)")
+title("Force Amplitude for the 0.5 V Signal")
+grid on
+
+figure(3)
+semilogy(freqp,abs(ypss36amp0_1_noampcorr),freqp,abs(ypss36amp0_1_Flat),'-o',freqp,abs(ypss36amp0_1_Ref2),'-*',freqp,abs(ypss36amp0_5_noampcorr),freqp,abs(ypss36amp0_5_Flat),freqp,abs(ypss36amp0_5_Ref2))
+legend("No Amplitude correction 0.1 V","Amp Correction to get Flat 0.1 V Signal", "Amp Correction to get 0.1 V Ref2 Signal","No Amplitude correction 0.1 V", "Amp Correction to get Flat 0.5 V Signal", "Amp Correction to get 0.5 V Ref2 Signal")
+xlabel("Frequency (Hz)")
+ylabel("Amplitude (m/s/N)")
+title("Transfer Function Amplitude with Amplitude Correction")
+grid on
+%%
+figure(4)
+semilogy(freqp,abs((Forcess36amp0_5_noampcorr)./(Forcess36amp0_5_noampcorrR2)),freqp,abs((Forcess36amp0_5_Flat)./(Forcess36amp0_5_FlatR2)))
+legend("No Amp Correction","With Flat Amp Correction")
+title("Effect of Amp Correction on the Transfer Function between Load Cell Force Output and Shaker Input")
+xlabel("Frequency(Hz)")
+ylabel("Amplitude(N/N)")
+grid on
